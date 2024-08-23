@@ -153,7 +153,7 @@ function enable_autoscaler_agent() {
     GRAPH_URL="https://graph.microsoft.us"
   fi
 
-  APP_NAME="CAST.AI ${CLUSTER_NAME}-${CASTAI_CLUSTER_ID:0:8}"
+  APP_NAME="wba-NonProd-infra-core-int-castai"
   APP=$(az rest -m GET -u "${GRAPH_URL}/v1.0/applications\?\$filter=startswith(displayName, '${APP_NAME}')" --headers ConsistencyLevel=eventual | jq -r '.value[0]')
   APP_ID=""
   APP_OBJECT_ID=""
